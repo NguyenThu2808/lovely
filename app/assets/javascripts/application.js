@@ -1,0 +1,11 @@
+//= require rails-ujs
+//= require activestorage
+//= require turbolinks
+//= require app-assets/vendors/js/vendors.min.js
+//= require app-assets/vendors/js/extensions/wNumb.min.js
+//= require app-assets/vendors/js/extensions/nouislider.min.js
+//= require app-assets/vendors/js/extensions/toastr.min.js
+//= require app-assets/js/core/app-menu.js
+//= require app-assets/js/core/app.js
+//= require app-assets/js/scripts/pages/app-ecommerce.js
+//= require pagination.js

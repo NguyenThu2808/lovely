@@ -1,0 +1,16 @@
+<div class="media align-items-center">
+  <img class="d-block rounded mr-1" src="../../../app-assets/images/pages/eCommerce/1.png" alt="donuts" width="62">
+  <div class="media-body">
+    <i class="ficon cart-item-remove" data-feather="x"></i>
+    <div class="media-heading">
+      <h6 class="cart-item-title"><a class="text-body" href="app-ecommerce-details.html"><%= cart_item.product.name %></a></h6>
+      <small class="cart-item-by">By Apple</small>
+    </div>
+    <div class="cart-item-qty">
+      <div class="input-group">
+        <input class="touchspin-cart" type="number" value="<%= cart_item.quantity %>">
+      </div>
+    </div>
+    <h5 class="cart-item-price"><%= cart_item.price %></h5>
+  </div>
+</div>

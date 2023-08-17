@@ -12,6 +12,10 @@
   *= require app-assets/css/core/menu/menu-types/vertical-menu.css
   *= require app-assets/css/plugins/extensions/ext-component-sliders.css
   *= require app-assets/css/pages/app-ecommerce.css
+  *= require app-assets/css/plugins/forms/pickers/form-pickadate.css
+  *= require app-assets/css/plugins/forms/form-wizard.css
   *= require app-assets/css/plugins/extensions/ext-component-toastr.css
+  *= require app-assets/css/plugins/forms/form-number-input.css
+  *= require app-assets/css/pages/page-auth.css
   *= require assets/css/style.css
 */

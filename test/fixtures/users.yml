@@ -2,7 +2,7 @@
 
 one:
   username: MyString
-  password: MyText
+  password_digest: MyString
   first_name: MyString
   last_name: MyString
   address: MyString
@@ -10,7 +10,7 @@ one:
 
 two:
   username: MyString
-  password: MyText
+  password_digest: MyString
   first_name: MyString
   last_name: MyString
   address: MyString

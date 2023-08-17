@@ -7,8 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 50.times do |n|
-  name = "Product #{n}"
+  name = Faker::Name.unique.name
   desc = Faker::Lorem.sentence 5
   price = rand(100)
+  quantity = rand(100)
+  # slug = name.downcase.split(" ").join("-")
   Product.create! name: name, desc: desc, price: price
+  # find_by_name
 end

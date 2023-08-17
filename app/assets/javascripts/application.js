@@ -9,3 +9,4 @@
 //= require app-assets/js/core/app.js
 //= require app-assets/js/scripts/pages/app-ecommerce.js
 //= require pagination.js
+//= require product.js

@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :require_login, only: :show
+
   def index
     @products = Product.page(params[:page]).per 9
 
@@ -9,6 +11,10 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.friendly.find(params[:id])
+    begin
+      @product = Product.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      render :not_found # Xử lý khi không tìm thấy bản ghi
+    end
   end
 end

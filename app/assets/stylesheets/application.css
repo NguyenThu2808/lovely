@@ -1,5 +1,7 @@
 /*
   *= require app-assets/vendors/css/vendors.min.css
+  *= require app-assets/vendors/css/forms/wizard/bs-stepper.min.css
+  *= require app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css
   *= require app-assets/vendors/css/extensions/nouislider.min.css
   *= require app-assets/vendors/css/extensions/toastr.min.css
   *= require app-assets/css/bootstrap.css

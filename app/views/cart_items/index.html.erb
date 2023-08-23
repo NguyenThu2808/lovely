@@ -32,7 +32,7 @@
     <div class="content-body">
       <div class="bs-stepper checkout-tab-steps">
         <!-- Wizard starts -->
-        <!-- <div class="bs-stepper-header">
+        <div class="bs-stepper-header">
           <div class="step" data-target="#step-cart">
             <button type="button" class="step-trigger">
             <span class="bs-stepper-box">
@@ -72,7 +72,7 @@
             </span>
             </button>
           </div>
-        </div> -->
+        </div>
         <!-- Wizard ends -->
         <div class="bs-stepper-content">
           <!-- Checkout Place order starts -->
@@ -118,6 +118,7 @@
                           <div class="detail-title">Delivery Charges</div>
                           <div class="detail-amt discount-amt text-success">Free</div>
                         </li>
+                        <input type="hidden" name="cart_ids" value="<%= @cart_items.pluck(:id) %>" id="cart_ids">
                       </ul>
                       <hr />
                       <ul class="list-unstyled">
@@ -138,6 +139,7 @@
           <!-- Checkout Customer Address Starts -->
           <div id="step-address" class="content">
             <form id="checkout-address" class="list-view product-checkout">
+              <%= @csrf %>
               <!-- Checkout Customer Address Left starts -->
               <div class="card">
                 <div class="card-header flex-column align-items-start">
@@ -235,7 +237,7 @@
                     <p class="card-text text-muted mt-25">Be sure to click on correct payment option</p>
                   </div>
                   <div class="card-body">
-                    <h6 class="card-holder-name my-75">John Doe</h6>
+                    <h6 class="card-holder-name my-75"></h6>
                     <div class="custom-control custom-radio">
                       <input type="radio" id="customColorRadio1" name="paymentOptions" class="custom-control-input" checked />
                       <label class="custom-control-label" for="customColorRadio1">
@@ -294,9 +296,9 @@
                   <div class="card-body">
                     <ul class="list-unstyled price-details">
                       <li class="price-detail">
-                        <div class="details-title">Price of 3 items</div>
+                        <div class="details-title">Price of <%= @cart_items.length %> items</div>
                         <div class="detail-amt">
-                          <strong>$699.30</strong>
+                          <strong><%= @cart_items.sum(:price) %></strong>
                         </div>
                       </li>
                       <li class="price-detail">
@@ -308,7 +310,7 @@
                     <ul class="list-unstyled price-details">
                       <li class="price-detail">
                         <div class="details-title">Amount Payable</div>
-                        <div class="detail-amt font-weight-bolder">$699.30</div>
+                        <div class="detail-amt font-weight-bolder"><%= @cart_items.sum(:price) %></div>
                       </li>
                     </ul>
                   </div>

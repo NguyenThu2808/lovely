@@ -2,11 +2,14 @@
 //= require activestorage
 //= require turbolinks
 //= require app-assets/vendors/js/vendors.min.js
+//= require app-assets/vendors/js/forms/wizard/bs-stepper.min.js
+//= require app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js
 //= require app-assets/vendors/js/extensions/wNumb.min.js
 //= require app-assets/vendors/js/extensions/nouislider.min.js
 //= require app-assets/vendors/js/extensions/toastr.min.js
 //= require app-assets/js/core/app-menu.js
 //= require app-assets/js/core/app.js
 //= require app-assets/js/scripts/pages/app-ecommerce.js
+//= require app-assets/js/scripts/pages/app-ecommerce-checkout.js
 //= require pagination.js
 //= require product.js

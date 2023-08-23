@@ -18,6 +18,21 @@ class CartItemsController < ApplicationController
 
   def index
     @cart_items = current_user.cart_items
+    session[:booking] = nil
+  end
+
+  def set_session_cart
+    session[:booking] = {cart_ids: params[:cart_ids]}
+  end
+
+  def set_session_address
+    session[:booking].merge!({address: {fullname: params[:fullname],
+      mobile_number: params[:mobile_number], city: params[:city],
+      postcode: params[:postcode]}})
+
+    respond_to do |format|
+      format.json { render json: {fullname: params[:fullname]}}
+    end
   end
 
   def destroy

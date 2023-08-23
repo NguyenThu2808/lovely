@@ -46,3 +46,34 @@ $('.remove-wishlist').on('click', function(e) {
 //   let quantity = parseInt(parent.find('.touchspin-cart').val()) - 1;
 //   parent.find('.touchspin-cart').val(quantity);
 // });
+
+
+$('.step-trigger, .place-order').on('click', function() {
+  let cart_ids = $('#cart_ids').val();
+
+  $.ajax({
+    url: '/set_session_cart',
+    type: 'POST',
+    dataType: 'script', //html, json
+    data: {cart_ids},
+    headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')},
+  });
+});
+
+$('.delivery-address').on('click', function() {
+  let fullname = $('#checkout-name').val();
+  let mobile_number = $('#checkout-number').val();
+  let city = $('#checkout-city').val();
+  let postcode = $('#checkout-pincode').val();
+
+  $.ajax({
+    url: '/set_session_address',
+    type: 'POST',
+    dataType: 'json', //html, json
+    data: {fullname, mobile_number, city, postcode},
+    headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')},
+    complete: function(data) {
+      $('.card-holder-name').text(data.responseJSON.fullname);
+    }
+  });
+});

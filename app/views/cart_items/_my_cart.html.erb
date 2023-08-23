@@ -13,7 +13,9 @@
   <li class="dropdown-menu-footer">
     <div class="d-flex justify-content-between mb-1">
       <h6 class="font-weight-bolder mb-0">Total:</h6>
-      <h6 class="text-primary font-weight-bolder mb-0">$10,999.00</h6>
+      <h6 class="text-primary font-weight-bolder mb-0">
+        <%= @cart_items.sum(:price) %>
+      </h6>
     </div>
     <a class="btn btn-primary btn-block" href="<%= cart_items_path %>">Cart item list</a>
   </li>
